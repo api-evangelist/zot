@@ -1,0 +1,1094 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Open Container Initiative Distribution Specification
+  description: 'Open Container Initiative Distribution Specification. 25 operations. Lead operation: Check API support. Self-contained
+    Naftiko capability covering one Zot business surface.'
+  tags:
+  - Zot
+  - Open Container Initiative Distribution Specification
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ZOT_API_KEY: ZOT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: zot
+    baseUri: ''
+    description: Open Container Initiative Distribution Specification business capability. Self-contained, no shared references.
+    resources:
+    - name: v2
+      path: /v2/
+      operations:
+      - name: get
+        method: GET
+        description: Check API support
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v2-_catalog
+      path: /v2/_catalog
+      operations:
+      - name: get
+        method: GET
+        description: List image repositories
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v2-_oci-ext-discover
+      path: /v2/_oci/ext/discover
+      operations:
+      - name: get
+        method: GET
+        description: List Registry level extensions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v2-_zot-ext-cosign
+      path: /v2/_zot/ext/cosign
+      operations:
+      - name: post
+        method: POST
+        description: Upload cosign public keys for verifying signatures
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: requestBody
+          in: body
+          type: string
+          description: Public key content
+          required: true
+    - name: v2-_zot-ext-mgmt
+      path: /v2/_zot/ext/mgmt
+      operations:
+      - name: get
+        method: GET
+        description: Get current server configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resource
+          in: query
+          type: string
+          description: specify resource
+    - name: v2-_zot-ext-notation
+      path: /v2/_zot/ext/notation
+      operations:
+      - name: post
+        method: POST
+        description: Upload notation certificates for verifying signatures
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: truststoreType
+          in: query
+          type: string
+          description: truststore type
+        - name: requestBody
+          in: body
+          type: string
+          description: Certificate content
+          required: true
+    - name: v2-_zot-ext-userprefs
+      path: /v2/_zot/ext/userprefs
+      operations:
+      - name: put
+        method: PUT
+        description: Add bookmarks/stars info
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: action
+          in: query
+          type: string
+          description: specify action
+          required: true
+        - name: repo
+          in: query
+          type: string
+          description: repository name
+          required: true
+    - name: v2-name-blobs-uploads
+      path: /v2/{name}/blobs/uploads
+      operations:
+      - name: post
+        method: POST
+        description: Create image blob/layer upload
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: repository name
+          required: true
+    - name: v2-name-blobs-uploads-session_id
+      path: /v2/{name}/blobs/uploads/{session_id}
+      operations:
+      - name: delete
+        method: DELETE
+        description: Delete image blob/layer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: repository name
+          required: true
+        - name: session_id
+          in: path
+          type: string
+          description: upload session_id
+          required: true
+      - name: get
+        method: GET
+        description: Get image blob/layer upload
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: repository name
+          required: true
+        - name: session_id
+          in: path
+          type: string
+          description: upload session_id
+          required: true
+      - name: patch
+        method: PATCH
+        description: Resume image blob/layer upload
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: repository name
+          required: true
+        - name: session_id
+          in: path
+          type: string
+          description: upload session_id
+          required: true
+      - name: put
+        method: PUT
+        description: Update image blob/layer upload
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: repository name
+          required: true
+        - name: session_id
+          in: path
+          type: string
+          description: upload session_id
+          required: true
+        - name: digest
+          in: query
+          type: string
+          description: blob/layer digest
+          required: true
+    - name: v2-name-blobs-digest
+      path: /v2/{name}/blobs/{digest}
+      operations:
+      - name: delete
+        method: DELETE
+        description: Delete image blob/layer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: repository name
+          required: true
+        - name: digest
+          in: path
+          type: string
+          description: blob/layer digest
+          required: true
+      - name: get
+        method: GET
+        description: Get image blob/layer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: repository name
+          required: true
+        - name: digest
+          in: path
+          type: string
+          description: blob/layer digest
+          required: true
+      - name: head
+        method: HEAD
+        description: Check image blob/layer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: repository name
+          required: true
+        - name: digest
+          in: path
+          type: string
+          description: blob/layer digest
+          required: true
+    - name: v2-name-manifests-reference
+      path: /v2/{name}/manifests/{reference}
+      operations:
+      - name: delete
+        method: DELETE
+        description: Delete image manifest
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: repository name
+          required: true
+        - name: reference
+          in: path
+          type: string
+          description: image reference or digest
+          required: true
+      - name: get
+        method: GET
+        description: Get image manifest
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: repository name
+          required: true
+        - name: reference
+          in: path
+          type: string
+          description: image reference or digest
+          required: true
+      - name: head
+        method: HEAD
+        description: Check image manifest
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: repository name
+          required: true
+        - name: reference
+          in: path
+          type: string
+          description: image reference or digest
+          required: true
+      - name: put
+        method: PUT
+        description: Update image manifest
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: repository name
+          required: true
+        - name: reference
+          in: path
+          type: string
+          description: image reference or digest
+          required: true
+        - name: tag
+          in: query
+          type: array
+          description: additional tag(s) for digest pushes
+    - name: v2-name-referrers-digest
+      path: /v2/{name}/referrers/{digest}
+      operations:
+      - name: get
+        method: GET
+        description: Get referrers for a given digest
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: repository name
+          required: true
+        - name: digest
+          in: path
+          type: string
+          description: digest
+          required: true
+        - name: artifactType
+          in: query
+          type: string
+          description: artifact type
+    - name: v2-name-tags-list
+      path: /v2/{name}/tags/list
+      operations:
+      - name: get
+        method: GET
+        description: List image tags
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: repository name
+          required: true
+        - name: n
+          in: query
+          type: integer
+          description: limit entries for pagination
+          required: true
+        - name: last
+          in: query
+          type: string
+          description: last tag value for pagination
+          required: true
+    - name: zot-auth-apikey
+      path: /zot/auth/apikey
+      operations:
+      - name: delete
+        method: DELETE
+        description: Revokes one current user API key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: query
+          type: string
+          description: api token id (UUID)
+          required: true
+      - name: get
+        method: GET
+        description: Get list of API keys for the current user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post
+        method: POST
+        description: Create an API key for the current user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: body
+          type: string
+          description: api token id (UUID)
+          required: true
+    - name: zot-auth-logout
+      path: /zot/auth/logout
+      operations:
+      - name: post
+        method: POST
+        description: Logout by removing current session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: zot-rest
+    port: 8080
+    description: REST adapter for Open Container Initiative Distribution Specification. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/v2
+      name: v2
+      description: REST surface for v2.
+      operations:
+      - method: GET
+        name: get
+        description: Check API support
+        call: zot.get
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/catalog
+      name: v2-catalog
+      description: REST surface for v2-_catalog.
+      operations:
+      - method: GET
+        name: get
+        description: List image repositories
+        call: zot.get
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/oci/ext/discover
+      name: v2-oci-ext-discover
+      description: REST surface for v2-_oci-ext-discover.
+      operations:
+      - method: GET
+        name: get
+        description: List Registry level extensions
+        call: zot.get
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/zot/ext/cosign
+      name: v2-zot-ext-cosign
+      description: REST surface for v2-_zot-ext-cosign.
+      operations:
+      - method: POST
+        name: post
+        description: Upload cosign public keys for verifying signatures
+        call: zot.post
+        with:
+          requestBody: rest.requestBody
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/zot/ext/mgmt
+      name: v2-zot-ext-mgmt
+      description: REST surface for v2-_zot-ext-mgmt.
+      operations:
+      - method: GET
+        name: get
+        description: Get current server configuration
+        call: zot.get
+        with:
+          resource: rest.resource
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/zot/ext/notation
+      name: v2-zot-ext-notation
+      description: REST surface for v2-_zot-ext-notation.
+      operations:
+      - method: POST
+        name: post
+        description: Upload notation certificates for verifying signatures
+        call: zot.post
+        with:
+          truststoreType: rest.truststoreType
+          requestBody: rest.requestBody
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/zot/ext/userprefs
+      name: v2-zot-ext-userprefs
+      description: REST surface for v2-_zot-ext-userprefs.
+      operations:
+      - method: PUT
+        name: put
+        description: Add bookmarks/stars info
+        call: zot.put
+        with:
+          action: rest.action
+          repo: rest.repo
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/{name}/blobs/uploads
+      name: v2-name-blobs-uploads
+      description: REST surface for v2-name-blobs-uploads.
+      operations:
+      - method: POST
+        name: post
+        description: Create image blob/layer upload
+        call: zot.post
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/{name}/blobs/uploads/{session-id}
+      name: v2-name-blobs-uploads-session-id
+      description: REST surface for v2-name-blobs-uploads-session_id.
+      operations:
+      - method: DELETE
+        name: delete
+        description: Delete image blob/layer
+        call: zot.delete
+        with:
+          name: rest.name
+          session_id: rest.session_id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: get
+        description: Get image blob/layer upload
+        call: zot.get
+        with:
+          name: rest.name
+          session_id: rest.session_id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: Resume image blob/layer upload
+        call: zot.patch
+        with:
+          name: rest.name
+          session_id: rest.session_id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: put
+        description: Update image blob/layer upload
+        call: zot.put
+        with:
+          name: rest.name
+          session_id: rest.session_id
+          digest: rest.digest
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/{name}/blobs/{digest}
+      name: v2-name-blobs-digest
+      description: REST surface for v2-name-blobs-digest.
+      operations:
+      - method: DELETE
+        name: delete
+        description: Delete image blob/layer
+        call: zot.delete
+        with:
+          name: rest.name
+          digest: rest.digest
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: get
+        description: Get image blob/layer
+        call: zot.get
+        with:
+          name: rest.name
+          digest: rest.digest
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: HEAD
+        name: head
+        description: Check image blob/layer
+        call: zot.head
+        with:
+          name: rest.name
+          digest: rest.digest
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/{name}/manifests/{reference}
+      name: v2-name-manifests-reference
+      description: REST surface for v2-name-manifests-reference.
+      operations:
+      - method: DELETE
+        name: delete
+        description: Delete image manifest
+        call: zot.delete
+        with:
+          name: rest.name
+          reference: rest.reference
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: get
+        description: Get image manifest
+        call: zot.get
+        with:
+          name: rest.name
+          reference: rest.reference
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: HEAD
+        name: head
+        description: Check image manifest
+        call: zot.head
+        with:
+          name: rest.name
+          reference: rest.reference
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: put
+        description: Update image manifest
+        call: zot.put
+        with:
+          name: rest.name
+          reference: rest.reference
+          tag: rest.tag
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/{name}/referrers/{digest}
+      name: v2-name-referrers-digest
+      description: REST surface for v2-name-referrers-digest.
+      operations:
+      - method: GET
+        name: get
+        description: Get referrers for a given digest
+        call: zot.get
+        with:
+          name: rest.name
+          digest: rest.digest
+          artifactType: rest.artifactType
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v2/{name}/tags/list
+      name: v2-name-tags-list
+      description: REST surface for v2-name-tags-list.
+      operations:
+      - method: GET
+        name: get
+        description: List image tags
+        call: zot.get
+        with:
+          name: rest.name
+          n: rest.n
+          last: rest.last
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/zot/auth/apikey
+      name: zot-auth-apikey
+      description: REST surface for zot-auth-apikey.
+      operations:
+      - method: DELETE
+        name: delete
+        description: Revokes one current user API key
+        call: zot.delete
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: get
+        description: Get list of API keys for the current user
+        call: zot.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: Create an API key for the current user
+        call: zot.post
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/zot/auth/logout
+      name: zot-auth-logout
+      description: REST surface for zot-auth-logout.
+      operations:
+      - method: POST
+        name: post
+        description: Logout by removing current session
+        call: zot.post
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: zot-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Open Container Initiative Distribution Specification. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: check-api-support
+      description: Check API support
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: zot.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-image-repositories
+      description: List image repositories
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: zot.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-registry-level-extensions
+      description: List Registry level extensions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: zot.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: upload-cosign-public-keys-verifying
+      description: Upload cosign public keys for verifying signatures
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: zot.post
+      with:
+        requestBody: tools.requestBody
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-current-server-configuration
+      description: Get current server configuration
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: zot.get
+      with:
+        resource: tools.resource
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: upload-notation-certificates-verifying-signatures
+      description: Upload notation certificates for verifying signatures
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: zot.post
+      with:
+        truststoreType: tools.truststoreType
+        requestBody: tools.requestBody
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: add-bookmarks-stars-info
+      description: Add bookmarks/stars info
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: zot.put
+      with:
+        action: tools.action
+        repo: tools.repo
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-image-blob-layer-upload
+      description: Create image blob/layer upload
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: zot.post
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-image-blob-layer
+      description: Delete image blob/layer
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: zot.delete
+      with:
+        name: tools.name
+        session_id: tools.session_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-image-blob-layer-upload
+      description: Get image blob/layer upload
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: zot.get
+      with:
+        name: tools.name
+        session_id: tools.session_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: resume-image-blob-layer-upload
+      description: Resume image blob/layer upload
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: zot.patch
+      with:
+        name: tools.name
+        session_id: tools.session_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-image-blob-layer-upload
+      description: Update image blob/layer upload
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: zot.put
+      with:
+        name: tools.name
+        session_id: tools.session_id
+        digest: tools.digest
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-image-blob-layer-2
+      description: Delete image blob/layer
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: zot.delete
+      with:
+        name: tools.name
+        digest: tools.digest
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-image-blob-layer
+      description: Get image blob/layer
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: zot.get
+      with:
+        name: tools.name
+        digest: tools.digest
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: check-image-blob-layer
+      description: Check image blob/layer
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: zot.head
+      with:
+        name: tools.name
+        digest: tools.digest
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-image-manifest
+      description: Delete image manifest
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: zot.delete
+      with:
+        name: tools.name
+        reference: tools.reference
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-image-manifest
+      description: Get image manifest
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: zot.get
+      with:
+        name: tools.name
+        reference: tools.reference
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: check-image-manifest
+      description: Check image manifest
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: zot.head
+      with:
+        name: tools.name
+        reference: tools.reference
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-image-manifest
+      description: Update image manifest
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: zot.put
+      with:
+        name: tools.name
+        reference: tools.reference
+        tag: tools.tag
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-referrers-given-digest
+      description: Get referrers for a given digest
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: zot.get
+      with:
+        name: tools.name
+        digest: tools.digest
+        artifactType: tools.artifactType
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-image-tags
+      description: List image tags
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: zot.get
+      with:
+        name: tools.name
+        n: tools.n
+        last: tools.last
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: revokes-one-current-user-api
+      description: Revokes one current user API key
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: zot.delete
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-list-api-keys-current
+      description: Get list of API keys for the current user
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: zot.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-api-key-current-user
+      description: Create an API key for the current user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: zot.post
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: logout-removing-current-session
+      description: Logout by removing current session
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: zot.post
+      outputParameters:
+      - type: object
+        mapping: $.
