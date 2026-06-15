@@ -16,7 +16,6 @@ common:
   - type: GitHubOrganization
     url: https://github.com/project-zot
 apis: []
-common: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

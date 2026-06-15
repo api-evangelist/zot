@@ -1,0 +1,537 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Open Container Initiative Distribution Specification",
+    "version": "v1.1.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Check API support",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/v2/"
+      },
+      "docs": "Check if this API version is supported"
+    },
+    {
+      "info": {
+        "name": "List image repositories",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/v2/_catalog"
+      },
+      "docs": "List all image repositories"
+    },
+    {
+      "info": {
+        "name": "List Registry level extensions",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/v2/_oci/ext/discover"
+      },
+      "docs": "List all extensions present on registry"
+    },
+    {
+      "info": {
+        "name": "Upload cosign public keys for verifying signatures",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{{baseUrl}}/v2/_zot/ext/cosign"
+      },
+      "docs": "Upload cosign public keys for verifying signatures"
+    },
+    {
+      "info": {
+        "name": "Get current server configuration",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/v2/_zot/ext/mgmt",
+        "params": [
+          {
+            "name": "resource",
+            "value": "",
+            "type": "query",
+            "description": "specify resource"
+          }
+        ]
+      },
+      "docs": "Get current server configuration"
+    },
+    {
+      "info": {
+        "name": "Upload notation certificates for verifying signatures",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{{baseUrl}}/v2/_zot/ext/notation",
+        "params": [
+          {
+            "name": "truststoreType",
+            "value": "",
+            "type": "query",
+            "description": "truststore type"
+          }
+        ]
+      },
+      "docs": "Upload notation certificates for verifying signatures"
+    },
+    {
+      "info": {
+        "name": "Add bookmarks/stars info",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/v2/_zot/ext/userprefs",
+        "params": [
+          {
+            "name": "action",
+            "value": "",
+            "type": "query",
+            "description": "specify action"
+          },
+          {
+            "name": "repo",
+            "value": "",
+            "type": "query",
+            "description": "repository name"
+          }
+        ]
+      },
+      "docs": "Add bookmarks/stars info"
+    },
+    {
+      "info": {
+        "name": "Get image blob/layer",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/v2/:name/blobs/:digest",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path",
+            "description": "repository name"
+          },
+          {
+            "name": "digest",
+            "value": "",
+            "type": "path",
+            "description": "blob/layer digest"
+          }
+        ]
+      },
+      "docs": "Get an image's blob/layer given a digest"
+    },
+    {
+      "info": {
+        "name": "Delete image blob/layer",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/v2/:name/blobs/:digest",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path",
+            "description": "repository name"
+          },
+          {
+            "name": "digest",
+            "value": "",
+            "type": "path",
+            "description": "blob/layer digest"
+          }
+        ]
+      },
+      "docs": "Delete an image's blob/layer given a digest"
+    },
+    {
+      "info": {
+        "name": "Check image blob/layer",
+        "type": "http"
+      },
+      "http": {
+        "method": "HEAD",
+        "url": "{{baseUrl}}/v2/:name/blobs/:digest",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path",
+            "description": "repository name"
+          },
+          {
+            "name": "digest",
+            "value": "",
+            "type": "path",
+            "description": "blob/layer digest"
+          }
+        ]
+      },
+      "docs": "Check an image's blob/layer given a digest"
+    },
+    {
+      "info": {
+        "name": "Create image blob/layer upload",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{{baseUrl}}/v2/:name/blobs/uploads",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path",
+            "description": "repository name"
+          }
+        ]
+      },
+      "docs": "Create a new image blob/layer upload"
+    },
+    {
+      "info": {
+        "name": "Get image blob/layer upload",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/v2/:name/blobs/uploads/:session_id",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path",
+            "description": "repository name"
+          },
+          {
+            "name": "session_id",
+            "value": "",
+            "type": "path",
+            "description": "upload session_id"
+          }
+        ]
+      },
+      "docs": "Get an image's blob/layer upload given a session_id"
+    },
+    {
+      "info": {
+        "name": "Update image blob/layer upload",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/v2/:name/blobs/uploads/:session_id",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path",
+            "description": "repository name"
+          },
+          {
+            "name": "session_id",
+            "value": "",
+            "type": "path",
+            "description": "upload session_id"
+          },
+          {
+            "name": "digest",
+            "value": "",
+            "type": "query",
+            "description": "blob/layer digest"
+          }
+        ]
+      },
+      "docs": "Update and finish an image's blob/layer upload given a digest"
+    },
+    {
+      "info": {
+        "name": "Resume image blob/layer upload",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "{{baseUrl}}/v2/:name/blobs/uploads/:session_id",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path",
+            "description": "repository name"
+          },
+          {
+            "name": "session_id",
+            "value": "",
+            "type": "path",
+            "description": "upload session_id"
+          }
+        ]
+      },
+      "docs": "Resume an image's blob/layer upload given an session_id"
+    },
+    {
+      "info": {
+        "name": "Delete image blob/layer",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/v2/:name/blobs/uploads/:session_id",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path",
+            "description": "repository name"
+          },
+          {
+            "name": "session_id",
+            "value": "",
+            "type": "path",
+            "description": "upload session_id"
+          }
+        ]
+      },
+      "docs": "Delete an image's blob/layer given a digest"
+    },
+    {
+      "info": {
+        "name": "Get image manifest",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/v2/:name/manifests/:reference",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path",
+            "description": "repository name"
+          },
+          {
+            "name": "reference",
+            "value": "",
+            "type": "path",
+            "description": "image reference or digest"
+          }
+        ]
+      },
+      "docs": "Get an image's manifest given a reference or a digest"
+    },
+    {
+      "info": {
+        "name": "Update image manifest",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/v2/:name/manifests/:reference",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path",
+            "description": "repository name"
+          },
+          {
+            "name": "reference",
+            "value": "",
+            "type": "path",
+            "description": "image reference or digest"
+          },
+          {
+            "name": "tag",
+            "value": "",
+            "type": "query",
+            "description": "additional tag(s) for digest pushes"
+          }
+        ]
+      },
+      "docs": "Update an image's manifest given a reference or a digest. On digest pushes with `tag=` query\nparameters, 201 responses repeat the `OCI-Tag` header once per tag value."
+    },
+    {
+      "info": {
+        "name": "Delete image manifest",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/v2/:name/manifests/:reference",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path",
+            "description": "repository name"
+          },
+          {
+            "name": "reference",
+            "value": "",
+            "type": "path",
+            "description": "image reference or digest"
+          }
+        ]
+      },
+      "docs": "Delete an image's manifest given a reference or a digest"
+    },
+    {
+      "info": {
+        "name": "Check image manifest",
+        "type": "http"
+      },
+      "http": {
+        "method": "HEAD",
+        "url": "{{baseUrl}}/v2/:name/manifests/:reference",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path",
+            "description": "repository name"
+          },
+          {
+            "name": "reference",
+            "value": "",
+            "type": "path",
+            "description": "image reference or digest"
+          }
+        ]
+      },
+      "docs": "Check an image's manifest given a reference or a digest"
+    },
+    {
+      "info": {
+        "name": "Get referrers for a given digest",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/v2/:name/referrers/:digest",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path",
+            "description": "repository name"
+          },
+          {
+            "name": "digest",
+            "value": "",
+            "type": "path",
+            "description": "digest"
+          },
+          {
+            "name": "artifactType",
+            "value": "",
+            "type": "query",
+            "description": "artifact type"
+          }
+        ]
+      },
+      "docs": "Get referrers given a digest"
+    },
+    {
+      "info": {
+        "name": "List image tags",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/v2/:name/tags/list",
+        "params": [
+          {
+            "name": "name",
+            "value": "",
+            "type": "path",
+            "description": "repository name"
+          },
+          {
+            "name": "n",
+            "value": "",
+            "type": "query",
+            "description": "limit entries for pagination"
+          },
+          {
+            "name": "last",
+            "value": "",
+            "type": "query",
+            "description": "last tag value for pagination"
+          }
+        ]
+      },
+      "docs": "List all image tags in a repository"
+    },
+    {
+      "info": {
+        "name": "Get list of API keys for the current user",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/zot/auth/apikey"
+      },
+      "docs": "Get list of all API keys for a logged in user"
+    },
+    {
+      "info": {
+        "name": "Create an API key for the current user",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{{baseUrl}}/zot/auth/apikey"
+      },
+      "docs": "Can create an api key for a logged in user, based on the provided label and scopes."
+    },
+    {
+      "info": {
+        "name": "Revokes one current user API key",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/zot/auth/apikey",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "query",
+            "description": "api token id (UUID)"
+          }
+        ]
+      },
+      "docs": "Revokes one current user API key based on given key ID"
+    },
+    {
+      "info": {
+        "name": "Logout by removing current session",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{{baseUrl}}/zot/auth/logout"
+      },
+      "docs": "Logout by removing current session. For OIDC providers that advertise an\n`end_session_endpoint` in their discovery metadata (OpenID Connect\nRP-Initiated Logout 1.0), the response body contains an `endSessionUrl`\nthe client should navigate to in order to terminate the session at the IdP."
+    }
+  ],
+  "bundled": true
+}

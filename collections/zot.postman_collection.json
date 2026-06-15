@@ -1,0 +1,5322 @@
+{
+  "item": [
+    {
+      "id": "4cf80ce5-9f7d-4d07-8220-a7523f0c44f1",
+      "name": "Check API support",
+      "request": {
+        "name": "Check API support",
+        "description": {
+          "content": "Check if this API version is supported",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "1183fd67-a97c-495f-a4b4-33be36e98117",
+          "name": "ok",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "44091a83-e071-4ba7-90c3-6c02982c6128",
+      "name": "List image repositories",
+      "request": {
+        "name": "List image repositories",
+        "description": {
+          "content": "List all image repositories",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            "_catalog"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "0107dbec-1f5d-44e5-bc66-859c04fa0421",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_catalog"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"repositories\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "9d1de70d-f57c-4ea8-87f2-963af0ac9720",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_catalog"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "2bdd7c97-af6c-4365-a49a-8b7af52c6490",
+      "name": "List Registry level extensions",
+      "request": {
+        "name": "List Registry level extensions",
+        "description": {
+          "content": "List all extensions present on registry",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            "_oci",
+            "ext",
+            "discover"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "9ef6bb02-b272-4e08-b702-74fcec994e1f",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_oci",
+                "ext",
+                "discover"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"extensions\": [\n    {\n      \"description\": \"string\",\n      \"endpoints\": [\n        \"string\",\n        \"string\"\n      ],\n      \"name\": \"string\",\n      \"url\": \"string\"\n    },\n    {\n      \"description\": \"string\",\n      \"endpoints\": [\n        \"string\",\n        \"string\"\n      ],\n      \"name\": \"string\",\n      \"url\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "5cf9fcd1-3a44-4b7f-bdd3-12df35ca94d1",
+      "name": "Upload cosign public keys for verifying signatures",
+      "request": {
+        "name": "Upload cosign public keys for verifying signatures",
+        "description": {
+          "content": "Upload cosign public keys for verifying signatures",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            "_zot",
+            "ext",
+            "cosign"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/octet-stream"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "<string>"
+        }
+      },
+      "response": [
+        {
+          "id": "075f2977-5828-493c-b6c6-3bfae2b1c04f",
+          "name": "ok",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_zot",
+                "ext",
+                "cosign"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "62017348-bf8d-4e27-876e-0d103dfbfeaf",
+          "name": "bad request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_zot",
+                "ext",
+                "cosign"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "3ce1e95d-b598-4922-b791-340160f82818",
+          "name": "request entity too large",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_zot",
+                "ext",
+                "cosign"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "status": "Request Entity Too Large",
+          "code": 413,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "25e35d2e-6f69-4fa3-89aa-b32691ef60c6",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_zot",
+                "ext",
+                "cosign"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "124eb147-e05d-4e3d-abf3-3685f67798b9",
+      "name": "Get current server configuration",
+      "request": {
+        "name": "Get current server configuration",
+        "description": {
+          "content": "Get current server configuration",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            "_zot",
+            "ext",
+            "mgmt"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "resource",
+              "value": "<string>",
+              "description": "specify resource"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "2c1f4f44-d2f1-4d08-ab43-130434497198",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_zot",
+                "ext",
+                "mgmt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "resource",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"binaryType\": \"string\",\n  \"commit\": \"string\",\n  \"distSpecVersion\": \"string\",\n  \"http\": {\n    \"auth\": {\n      \"apikey\": true,\n      \"bearer\": {\n        \"realm\": \"string\",\n        \"service\": \"string\"\n      },\n      \"htpasswd\": {\n        \"path\": \"string\"\n      },\n      \"ldap\": {\n        \"address\": \"string\"\n      },\n      \"openid\": {\n        \"providers\": {\n          \"key_0\": {\n            \"name\": \"string\"\n          },\n          \"key_1\": {\n            \"name\": \"string\"\n          },\n          \"key_2\": {\n            \"name\": \"string\"\n          }\n        }\n      }\n    }\n  },\n  \"releaseTag\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "1e1daf71-8365-4062-b76a-c0e931a3ee3b",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_zot",
+                "ext",
+                "mgmt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "resource",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "1d7350ed-8f64-43f5-9b19-67f7656e3773",
+      "name": "Upload notation certificates for verifying signatures",
+      "request": {
+        "name": "Upload notation certificates for verifying signatures",
+        "description": {
+          "content": "Upload notation certificates for verifying signatures",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            "_zot",
+            "ext",
+            "notation"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "truststoreType",
+              "value": "<string>",
+              "description": "truststore type"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/octet-stream"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "<string>"
+        }
+      },
+      "response": [
+        {
+          "id": "2e7de06a-813d-4059-961d-d6e2393838aa",
+          "name": "ok",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_zot",
+                "ext",
+                "notation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "truststoreType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "5244658b-f927-4031-83f5-8244d0ee303a",
+          "name": "bad request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_zot",
+                "ext",
+                "notation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "truststoreType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "7718a37c-7ae6-409c-9854-edff04bf1076",
+          "name": "request entity too large",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_zot",
+                "ext",
+                "notation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "truststoreType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "status": "Request Entity Too Large",
+          "code": 413,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "bbe86beb-920e-4640-b04a-acb3103f9d88",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_zot",
+                "ext",
+                "notation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "truststoreType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "a6e5226b-193d-4229-9ceb-0f1e96c9d89a",
+      "name": "Add bookmarks/stars info",
+      "request": {
+        "name": "Add bookmarks/stars info",
+        "description": {
+          "content": "Add bookmarks/stars info",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            "_zot",
+            "ext",
+            "userprefs"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "action",
+              "value": "<string>",
+              "description": "(Required) specify action"
+            },
+            {
+              "disabled": false,
+              "key": "repo",
+              "value": "<string>",
+              "description": "(Required) repository name"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "PUT",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "b3fd6982-9cc4-4925-96fc-ccea726cc0eb",
+          "name": "ok",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_zot",
+                "ext",
+                "userprefs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "<string>"
+                },
+                {
+                  "key": "repo",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "391dea13-09ff-45ec-911b-e90468556288",
+          "name": "bad request\".",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_zot",
+                "ext",
+                "userprefs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "<string>"
+                },
+                {
+                  "key": "repo",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "624088f1-644e-48cc-ad0c-8541140f8535",
+          "name": "forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_zot",
+                "ext",
+                "userprefs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "<string>"
+                },
+                {
+                  "key": "repo",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "1afcae93-8b9c-4c26-9130-1e83a0f299e6",
+          "name": "not found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_zot",
+                "ext",
+                "userprefs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "<string>"
+                },
+                {
+                  "key": "repo",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {}
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "68173839-c4c7-4927-be4e-0f1c5addb608",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                "_zot",
+                "ext",
+                "userprefs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "<string>"
+                },
+                {
+                  "key": "repo",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "dc39faf3-724f-4d7e-bf4c-339e8eec2fa6",
+      "name": "Delete image blob/layer",
+      "request": {
+        "name": "Delete image blob/layer",
+        "description": {
+          "content": "Delete an image's blob/layer given a digest",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            ":name",
+            "blobs",
+            ":digest"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "name",
+              "description": "(Required) repository name"
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "digest",
+              "description": "(Required) blob/layer digest"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "2ace8f51-5295-4d02-99e9-6c6f646bdc0e",
+          "name": "accepted",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                ":digest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "digest",
+                  "description": "(Required) blob/layer digest"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "1ed40b1b-fcf9-45dd-912d-692966e5abda",
+      "name": "Get image blob/layer",
+      "request": {
+        "name": "Get image blob/layer",
+        "description": {
+          "content": "Get an image's blob/layer given a digest",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            ":name",
+            "blobs",
+            ":digest"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "name",
+              "description": "(Required) repository name"
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "digest",
+              "description": "(Required) blob/layer digest"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.oci.image.layer.v1.tar+gzip"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "0e5bded9-b8a7-4f36-9695-c7e9c53e4c72",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                ":digest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "digest",
+                  "description": "(Required) blob/layer digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.oci.image.layer.v1.tar+gzip"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.oci.image.layer.v1.tar+gzip"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "c05afc56-2c1b-409b-b24a-0ecc3eb3c9e5",
+      "name": "Check image blob/layer",
+      "request": {
+        "name": "Check image blob/layer",
+        "description": {
+          "content": "Check an image's blob/layer given a digest",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            ":name",
+            "blobs",
+            ":digest"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "name",
+              "description": "(Required) repository name"
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "digest",
+              "description": "(Required) blob/layer digest"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "HEAD",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "3d3974eb-b367-45c7-bd30-0cc821b35d49",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                ":digest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "digest",
+                  "description": "(Required) blob/layer digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "HEAD",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "disabled": false,
+              "description": "Manifest digest of the content",
+              "key": "Docker-Content-Digest",
+              "value": "string"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"annotations\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"artifactType\": \"string\",\n  \"config\": {\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    },\n    \"artifactType\": \"string\",\n    \"data\": [\n      9375,\n      7699\n    ],\n    \"digest\": \"string\",\n    \"mediaType\": \"string\",\n    \"platform\": {\n      \"architecture\": \"string\",\n      \"os\": \"string\",\n      \"os.features\": [\n        \"string\",\n        \"string\"\n      ],\n      \"os.version\": \"string\",\n      \"variant\": \"string\"\n    },\n    \"size\": 3875,\n    \"urls\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"layers\": [\n    {\n      \"annotations\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\"\n      },\n      \"artifactType\": \"string\",\n      \"data\": [\n        1821,\n        2447\n      ],\n      \"digest\": \"string\",\n      \"mediaType\": \"string\",\n      \"platform\": {\n        \"architecture\": \"string\",\n        \"os\": \"string\",\n        \"os.features\": [\n          \"string\",\n          \"string\"\n        ],\n        \"os.version\": \"string\",\n        \"variant\": \"string\"\n      },\n      \"size\": 1214,\n      \"urls\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"annotations\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"artifactType\": \"string\",\n      \"data\": [\n        6678,\n        5254\n      ],\n      \"digest\": \"string\",\n      \"mediaType\": \"string\",\n      \"platform\": {\n        \"architecture\": \"string\",\n        \"os\": \"string\",\n        \"os.features\": [\n          \"string\",\n          \"string\"\n        ],\n        \"os.version\": \"string\",\n        \"variant\": \"string\"\n      },\n      \"size\": 5469,\n      \"urls\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"mediaType\": \"string\",\n  \"schemaVersion\": 7255,\n  \"subject\": {\n    \"annotations\": {\n      \"key_0\": \"string\"\n    },\n    \"artifactType\": \"string\",\n    \"data\": [\n      1112,\n      7768\n    ],\n    \"digest\": \"string\",\n    \"mediaType\": \"string\",\n    \"platform\": {\n      \"architecture\": \"string\",\n      \"os\": \"string\",\n      \"os.features\": [\n        \"string\",\n        \"string\"\n      ],\n      \"os.version\": \"string\",\n      \"variant\": \"string\"\n    },\n    \"size\": 992,\n    \"urls\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "b2a374b1-668d-4855-8bd4-10a6b8d85abb",
+      "name": "Create image blob/layer upload",
+      "request": {
+        "name": "Create image blob/layer upload",
+        "description": {
+          "content": "Create a new image blob/layer upload",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            ":name",
+            "blobs",
+            "uploads"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "name",
+              "description": "(Required) repository name"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "e6709a7f-debf-410d-bece-53f335448ecf",
+          "name": "accepted",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "disabled": false,
+              "description": "/v2/{name}/blobs/uploads/{session_id}",
+              "key": "Location",
+              "value": "string"
+            },
+            {
+              "disabled": false,
+              "description": "0-0",
+              "key": "Range",
+              "value": "string"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "49ab66b0-26f4-48d8-bd8b-f3df98eeee96",
+          "name": "unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "df0d192b-19ad-4916-8c1f-9be6f32800c1",
+          "name": "not found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "34c42ce9-273b-4351-8c23-3b1f9798e832",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "bbfd5bf4-1a2e-42f0-8888-13226988a05d",
+      "name": "Delete image blob/layer",
+      "request": {
+        "name": "Delete image blob/layer",
+        "description": {
+          "content": "Delete an image's blob/layer given a digest",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            ":name",
+            "blobs",
+            "uploads",
+            ":session_id"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "name",
+              "description": "(Required) repository name"
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "session_id",
+              "description": "(Required) upload session_id"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "DELETE",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "994906ab-f874-4cc1-ae18-8272c1a8222b",
+          "name": "no content",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "02f8f975-0ab9-493e-b443-71739ea3c9e9",
+          "name": "not found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "7b2833ac-4f31-455e-ba18-f34b47a78468",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "cd9eca64-cc8c-4e93-87c8-5704a41dcb75",
+      "name": "Get image blob/layer upload",
+      "request": {
+        "name": "Get image blob/layer upload",
+        "description": {
+          "content": "Get an image's blob/layer upload given a session_id",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            ":name",
+            "blobs",
+            "uploads",
+            ":session_id"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "name",
+              "description": "(Required) repository name"
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "session_id",
+              "description": "(Required) upload session_id"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "6e863813-dad1-43f2-9477-24573d5e4bb2",
+          "name": "no content",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "disabled": false,
+              "description": "/v2/{name}/blobs/uploads/{session_id}",
+              "key": "Location",
+              "value": "string"
+            },
+            {
+              "disabled": false,
+              "description": "0-128",
+              "key": "Range",
+              "value": "string"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "af6a33ba-e013-49d9-9348-1c419e2cd48c",
+          "name": "bad request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "eea8ae51-889d-4d06-9089-cf37cb92e20c",
+          "name": "not found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "dc1d6ced-787a-4e96-b22f-f0258c0b6d9b",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "d26e7546-88ec-4971-b82a-7dd75a62f10b",
+      "name": "Resume image blob/layer upload",
+      "request": {
+        "name": "Resume image blob/layer upload",
+        "description": {
+          "content": "Resume an image's blob/layer upload given an session_id",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            ":name",
+            "blobs",
+            "uploads",
+            ":session_id"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "name",
+              "description": "(Required) repository name"
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "session_id",
+              "description": "(Required) upload session_id"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "PATCH",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "0cebaf65-dfb6-45d3-923b-2c31f46eef06",
+          "name": "accepted",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "body": {}
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "disabled": false,
+              "description": "Opaque blob upload session identifier",
+              "key": "Blob-Upload-UUID",
+              "value": "string"
+            },
+            {
+              "disabled": false,
+              "description": "/v2/{name}/blobs/uploads/{session_id}",
+              "key": "Location",
+              "value": "string"
+            },
+            {
+              "disabled": false,
+              "description": "0-128",
+              "key": "Range",
+              "value": "string"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "bbbe8d01-1c1c-46c6-890c-236a16e17796",
+          "name": "bad request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "7d520b8d-f21a-4af4-bb5f-27ea9929b277",
+          "name": "not found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "body": {}
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "1471aeba-8d21-4d9b-bcff-c4d1f49b0cf3",
+          "name": "range not satisfiable",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "body": {}
+          },
+          "status": "Requested Range Not Satisfiable",
+          "code": 416,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "d9c8472f-6dc1-4198-9cc5-6395a4576bba",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "13afe50a-c150-482f-b53d-97797f591d1e",
+      "name": "Update image blob/layer upload",
+      "request": {
+        "name": "Update image blob/layer upload",
+        "description": {
+          "content": "Update and finish an image's blob/layer upload given a digest",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            ":name",
+            "blobs",
+            "uploads",
+            ":session_id"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "digest",
+              "value": "<string>",
+              "description": "(Required) blob/layer digest"
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "name",
+              "description": "(Required) repository name"
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "session_id",
+              "description": "(Required) upload session_id"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "PUT",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "5cc28016-dcaf-4984-8471-0077bf81a48e",
+          "name": "created",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "digest",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "method": "PUT",
+            "body": {}
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "disabled": false,
+              "description": "Digest of the committed blob",
+              "key": "Docker-Content-Digest",
+              "value": "string"
+            },
+            {
+              "disabled": false,
+              "description": "/v2/{name}/blobs/{digest}",
+              "key": "Location",
+              "value": "string"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "4060483d-10ef-4bd1-ad4a-d55125982729",
+          "name": "bad request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "digest",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "c0c327f3-0e17-497e-aa96-f0cb32304c96",
+          "name": "not found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "digest",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {}
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "1e0df62d-5db9-436d-ad85-00a3eeb4a68d",
+          "name": "range not satisfiable",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "digest",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {}
+          },
+          "status": "Requested Range Not Satisfiable",
+          "code": 416,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "d69283ee-3a09-4244-811f-2629683e1677",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "blobs",
+                "uploads",
+                ":session_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "digest",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "session_id",
+                  "description": "(Required) upload session_id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "7fca69b3-edc9-4e11-9a5b-6e37ee6406c5",
+      "name": "Delete image manifest",
+      "request": {
+        "name": "Delete image manifest",
+        "description": {
+          "content": "Delete an image's manifest given a reference or a digest",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            ":name",
+            "manifests",
+            ":reference"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "name",
+              "description": "(Required) repository name"
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "reference",
+              "description": "(Required) image reference or digest"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "DELETE",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "9746756b-79f0-49c8-ac83-d39f83302cf0",
+          "name": "accepted",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "b0f62ae0-cfb1-426e-8c54-e5b7ecd30c62",
+          "name": "bad request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "77567038-d9c3-4e2a-a39c-1bc1d2103303",
+          "name": "not found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "f1f948c2-61ec-4374-b808-377b16e7b049",
+          "name": "method not allowed",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Method Not Allowed",
+          "code": 405,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "3dae7e56-25ec-49fa-8dfb-f2da7ea37a04",
+          "name": "conflict",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Conflict",
+          "code": 409,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "def5b28a-8b15-4dd6-bb01-55b159b51a35",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "d9931dc7-a855-4bcf-95d1-6754e8c2106b",
+      "name": "Get image manifest",
+      "request": {
+        "name": "Get image manifest",
+        "description": {
+          "content": "Get an image's manifest given a reference or a digest",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            ":name",
+            "manifests",
+            ":reference"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "name",
+              "description": "(Required) repository name"
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "reference",
+              "description": "(Required) image reference or digest"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.oci.image.manifest.v1+json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "822ebbf2-1a0f-45a5-964f-90ebbaa6b72f",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.oci.image.manifest.v1+json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "disabled": false,
+              "description": "Manifest digest of the content",
+              "key": "Docker-Content-Digest",
+              "value": "string"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.oci.image.manifest.v1+json"
+            }
+          ],
+          "body": "{\n  \"annotations\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"artifactType\": \"string\",\n  \"config\": {\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    },\n    \"artifactType\": \"string\",\n    \"data\": [\n      9375,\n      7699\n    ],\n    \"digest\": \"string\",\n    \"mediaType\": \"string\",\n    \"platform\": {\n      \"architecture\": \"string\",\n      \"os\": \"string\",\n      \"os.features\": [\n        \"string\",\n        \"string\"\n      ],\n      \"os.version\": \"string\",\n      \"variant\": \"string\"\n    },\n    \"size\": 3875,\n    \"urls\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"layers\": [\n    {\n      \"annotations\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\"\n      },\n      \"artifactType\": \"string\",\n      \"data\": [\n        1821,\n        2447\n      ],\n      \"digest\": \"string\",\n      \"mediaType\": \"string\",\n      \"platform\": {\n        \"architecture\": \"string\",\n        \"os\": \"string\",\n        \"os.features\": [\n          \"string\",\n          \"string\"\n        ],\n        \"os.version\": \"string\",\n        \"variant\": \"string\"\n      },\n      \"size\": 1214,\n      \"urls\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"annotations\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"artifactType\": \"string\",\n      \"data\": [\n        6678,\n        5254\n      ],\n      \"digest\": \"string\",\n      \"mediaType\": \"string\",\n      \"platform\": {\n        \"architecture\": \"string\",\n        \"os\": \"string\",\n        \"os.features\": [\n          \"string\",\n          \"string\"\n        ],\n        \"os.version\": \"string\",\n        \"variant\": \"string\"\n      },\n      \"size\": 5469,\n      \"urls\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"mediaType\": \"string\",\n  \"schemaVersion\": 7255,\n  \"subject\": {\n    \"annotations\": {\n      \"key_0\": \"string\"\n    },\n    \"artifactType\": \"string\",\n    \"data\": [\n      1112,\n      7768\n    ],\n    \"digest\": \"string\",\n    \"mediaType\": \"string\",\n    \"platform\": {\n      \"architecture\": \"string\",\n      \"os\": \"string\",\n      \"os.features\": [\n        \"string\",\n        \"string\"\n      ],\n      \"os.version\": \"string\",\n      \"variant\": \"string\"\n    },\n    \"size\": 992,\n    \"urls\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "16c1dfc3-777e-477b-a2d2-2dc93da92f0b",
+          "name": "not found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.oci.image.manifest.v1+json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.oci.image.manifest.v1+json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "91864f74-a5c2-4cc2-b2fa-8abe639eccc5",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.oci.image.manifest.v1+json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.oci.image.manifest.v1+json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "878869a4-b1ed-4b3c-9a58-09942bace53a",
+      "name": "Check image manifest",
+      "request": {
+        "name": "Check image manifest",
+        "description": {
+          "content": "Check an image's manifest given a reference or a digest",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            ":name",
+            "manifests",
+            ":reference"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "name",
+              "description": "(Required) repository name"
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "reference",
+              "description": "(Required) image reference or digest"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "HEAD",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "d298a54d-1d9d-4c26-86b9-687f64bca854",
+          "name": "ok",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "HEAD",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "disabled": false,
+              "description": "Manifest digest of the content",
+              "key": "Docker-Content-Digest",
+              "value": "string"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "55e089fc-1ce5-466a-b667-25acb65a169d",
+          "name": "not found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "HEAD",
+            "body": {}
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "c742d30e-3730-4b09-ba72-e4eccc6a5617",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "HEAD",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "b21662ff-316c-4997-8b02-cdb9016ed461",
+      "name": "Update image manifest",
+      "request": {
+        "name": "Update image manifest",
+        "description": {
+          "content": "Update an image's manifest given a reference or a digest. On digest pushes with `tag=` query\nparameters, 201 responses repeat the `OCI-Tag` header once per tag value.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            ":name",
+            "manifests",
+            ":reference"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "tag",
+              "value": "<string>",
+              "description": "additional tag(s) for digest pushes"
+            },
+            {
+              "disabled": false,
+              "key": "tag",
+              "value": "<string>",
+              "description": "additional tag(s) for digest pushes"
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "name",
+              "description": "(Required) repository name"
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "reference",
+              "description": "(Required) image reference or digest"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "PUT",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "df59657e-9249-4e42-b89f-a045521d9a18",
+          "name": "created",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "tag",
+                  "value": "<string>"
+                },
+                {
+                  "key": "tag",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "method": "PUT",
+            "body": {}
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "disabled": false,
+              "description": "Manifest digest of the uploaded content",
+              "key": "Docker-Content-Digest",
+              "value": "string"
+            },
+            {
+              "disabled": false,
+              "description": "Echoed tag= value; this header is repeatable (one field per tag= query parameter)",
+              "key": "OCI-Tag",
+              "value": "string"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "899e515f-051b-45de-8cda-8302e6dc5a09",
+          "name": "bad request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "tag",
+                  "value": "<string>"
+                },
+                {
+                  "key": "tag",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "f04c20ef-b29c-4d40-ab02-5e885032874d",
+          "name": "not found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "tag",
+                  "value": "<string>"
+                },
+                {
+                  "key": "tag",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {}
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "56c45b17-03bd-4b49-9456-d9a6213414d5",
+          "name": "request entity too large",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "tag",
+                  "value": "<string>"
+                },
+                {
+                  "key": "tag",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {}
+          },
+          "status": "Request Entity Too Large",
+          "code": 413,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "778e5a14-021b-45dc-8753-b7e621f0c1b3",
+          "name": "too many tag query parameters",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "tag",
+                  "value": "<string>"
+                },
+                {
+                  "key": "tag",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {}
+          },
+          "status": "Request-URI Too Long",
+          "code": 414,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "9da5e0bf-6d05-417c-a0dd-31b04cc094d0",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "manifests",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "tag",
+                  "value": "<string>"
+                },
+                {
+                  "key": "tag",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) image reference or digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "189ba875-add2-4bbd-8d33-9147bd94ec9e",
+      "name": "Get referrers for a given digest",
+      "request": {
+        "name": "Get referrers for a given digest",
+        "description": {
+          "content": "Get referrers given a digest",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            ":name",
+            "referrers",
+            ":digest"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "artifactType",
+              "value": "<string>",
+              "description": "artifact type"
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "name",
+              "description": "(Required) repository name"
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "digest",
+              "description": "(Required) digest"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.oci.image.index.v1+json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "13d463c0-6031-4155-a3f5-2bbc50328fa5",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "referrers",
+                ":digest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "artifactType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "digest",
+                  "description": "(Required) digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.oci.image.index.v1+json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.oci.image.index.v1+json"
+            }
+          ],
+          "body": "{\n  \"annotations\": {\n    \"key_0\": \"string\"\n  },\n  \"artifactType\": \"string\",\n  \"manifests\": [\n    {\n      \"annotations\": {\n        \"key_0\": \"string\"\n      },\n      \"artifactType\": \"string\",\n      \"data\": [\n        439,\n        5574\n      ],\n      \"digest\": \"string\",\n      \"mediaType\": \"string\",\n      \"platform\": {\n        \"architecture\": \"string\",\n        \"os\": \"string\",\n        \"os.features\": [\n          \"string\",\n          \"string\"\n        ],\n        \"os.version\": \"string\",\n        \"variant\": \"string\"\n      },\n      \"size\": 854,\n      \"urls\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"annotations\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"artifactType\": \"string\",\n      \"data\": [\n        9064,\n        3086\n      ],\n      \"digest\": \"string\",\n      \"mediaType\": \"string\",\n      \"platform\": {\n        \"architecture\": \"string\",\n        \"os\": \"string\",\n        \"os.features\": [\n          \"string\",\n          \"string\"\n        ],\n        \"os.version\": \"string\",\n        \"variant\": \"string\"\n      },\n      \"size\": 2846,\n      \"urls\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"mediaType\": \"string\",\n  \"schemaVersion\": 6854,\n  \"subject\": {\n    \"annotations\": {\n      \"key_0\": \"string\"\n    },\n    \"artifactType\": \"string\",\n    \"data\": [\n      2206,\n      4892\n    ],\n    \"digest\": \"string\",\n    \"mediaType\": \"string\",\n    \"platform\": {\n      \"architecture\": \"string\",\n      \"os\": \"string\",\n      \"os.features\": [\n        \"string\",\n        \"string\"\n      ],\n      \"os.version\": \"string\",\n      \"variant\": \"string\"\n    },\n    \"size\": 5971,\n    \"urls\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "352a4269-1af8-4a87-a3b0-f2e224955586",
+          "name": "not found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "referrers",
+                ":digest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "artifactType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "digest",
+                  "description": "(Required) digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.oci.image.index.v1+json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.oci.image.index.v1+json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "d3ac4ccb-aa6d-4731-a57d-88cc3dc77d96",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "referrers",
+                ":digest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "artifactType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "digest",
+                  "description": "(Required) digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.oci.image.index.v1+json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.oci.image.index.v1+json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "2ef222e5-7d62-4a04-a51b-5dd3a90a9ab6",
+      "name": "List image tags",
+      "request": {
+        "name": "List image tags",
+        "description": {
+          "content": "List all image tags in a repository",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v2",
+            ":name",
+            "tags",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "n",
+              "value": "<integer>",
+              "description": "(Required) limit entries for pagination"
+            },
+            {
+              "disabled": false,
+              "key": "last",
+              "value": "<string>",
+              "description": "(Required) last tag value for pagination"
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "name",
+              "description": "(Required) repository name"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "e9a8327b-62e3-42de-af2b-59fca8e80b5d",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "tags",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "n",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "last",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"name\": \"string\",\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "9b7338f3-e2c2-4511-ae09-b6f4845a5904",
+          "name": "bad request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "tags",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "n",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "last",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "0e21d8a5-4adb-484e-8cd2-4c8df86bbfc3",
+          "name": "not found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "tags",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "n",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "last",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "5f4dd5f5-95bb-4efb-9aa4-e5274b044a22",
+      "name": "Revokes one current user API key",
+      "request": {
+        "name": "Revokes one current user API key",
+        "description": {
+          "content": "Revokes one current user API key based on given key ID",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "zot",
+            "auth",
+            "apikey"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "id",
+              "value": "<string>",
+              "description": "(Required) api token id (UUID)"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "DELETE",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "695ba0cf-adec-4863-9e55-51495401e636",
+          "name": "ok",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zot",
+                "auth",
+                "apikey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "1040cdb2-498b-41e7-b636-f8de23e1ac37",
+          "name": "bad request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zot",
+                "auth",
+                "apikey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "8c291995-e3be-4823-abc9-c7bcc44736ce",
+          "name": "unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zot",
+                "auth",
+                "apikey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "664a2f0d-3cd8-469e-8fff-60acfed97e87",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zot",
+                "auth",
+                "apikey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "5e033237-8d3d-41ee-a1da-b46ed31450eb",
+      "name": "Get list of API keys for the current user",
+      "request": {
+        "name": "Get list of API keys for the current user",
+        "description": {
+          "content": "Get list of all API keys for a logged in user",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "zot",
+            "auth",
+            "apikey"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "24a9d65c-b0dc-4b90-b9d4-1d6b0eeae487",
+          "name": "ok",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zot",
+                "auth",
+                "apikey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "6c14ad7c-37a9-4183-b496-28f3ab578a87",
+          "name": "unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zot",
+                "auth",
+                "apikey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "147efd42-0d36-4164-8dbd-42dde66a49d4",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zot",
+                "auth",
+                "apikey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "1ee8f814-3411-4946-8574-50b8b4fad806",
+      "name": "Create an API key for the current user",
+      "request": {
+        "name": "Create an API key for the current user",
+        "description": {
+          "content": "Can create an api key for a logged in user, based on the provided label and scopes.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "zot",
+            "auth",
+            "apikey"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"expirationDate\": \"<string>\",\n  \"label\": \"<string>\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "b792c52b-a79a-4cae-9c93-9c585911408f",
+          "name": "created",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zot",
+                "auth",
+                "apikey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"expirationDate\": \"<string>\",\n  \"label\": \"<string>\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "96605da4-6ad3-4026-9d35-a571e1913dd4",
+          "name": "bad request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zot",
+                "auth",
+                "apikey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"expirationDate\": \"<string>\",\n  \"label\": \"<string>\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "ef7e5ad4-4813-48b0-af9e-61a5732e7a8b",
+          "name": "unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zot",
+                "auth",
+                "apikey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"expirationDate\": \"<string>\",\n  \"label\": \"<string>\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "1fc47706-429e-4328-a7af-57207da9c034",
+          "name": "request entity too large",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zot",
+                "auth",
+                "apikey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"expirationDate\": \"<string>\",\n  \"label\": \"<string>\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Request Entity Too Large",
+          "code": 413,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "9644f187-b393-4f3e-a686-bc455542ec46",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zot",
+                "auth",
+                "apikey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"expirationDate\": \"<string>\",\n  \"label\": \"<string>\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "238838fc-165f-4c3c-a784-783d99678138",
+      "name": "Logout by removing current session",
+      "request": {
+        "name": "Logout by removing current session",
+        "description": {
+          "content": "Logout by removing current session. For OIDC providers that advertise an\n`end_session_endpoint` in their discovery metadata (OpenID Connect\nRP-Initiated Logout 1.0), the response body contains an `endSessionUrl`\nthe client should navigate to in order to terminate the session at the IdP.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "zot",
+            "auth",
+            "logout"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "85f20a94-2c04-4ce5-ac2e-f68c9e10e602",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zot",
+                "auth",
+                "logout"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"endSessionUrl\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "aac19620-79c5-45fd-8627-8a25ab1ab076",
+          "name": "internal server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zot",
+                "auth",
+                "logout"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "20341f8b-8a2c-40ff-bb87-d96fd47e26a7",
+    "name": "Open Container Initiative Distribution Specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "APIs for Open Container Initiative Distribution Specification",
+      "type": "text/plain"
+    }
+  }
+}

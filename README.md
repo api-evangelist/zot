@@ -1,25 +1,30 @@
 # Zot (zot)
+
 A decentralized communication protocol and platform for federated social networking, enabling secure and private content sharing across distributed servers.
 
-**URL:** [Visit APIs.json URL](https://zotlabs.org)
+**APIs.json:** [https://zotlabs.org](https://zotlabs.org)
 
 ## Scope
 
-- **Type:** Index 
-- **Position:** Consuming 
-- **Access:** 3rd-Party 
+- **Type:** Index
 
-## Tags:
+## Tags
 
- - Decentralized, Social Networking, Federation, Privacy
+- Decentralized
+- Federation
+- Privacy
+- Social Networking
 
 ## Timestamps
 
-- **Created:** 2025 
-- **Modified:** 2026-03-16 
+- **Created:** 2025
+- **Modified:** 2026-05-19
+
+## Common Properties
+
+- [GitHub Organization](https://github.com/project-zot)
 
 ## Maintainers
 
 **FN:** Kin Lane
-
 **Email:** kin@apievangelist.com
