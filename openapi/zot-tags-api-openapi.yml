@@ -1,0 +1,61 @@
+swagger: '2.0'
+info:
+  contact: {}
+  description: APIs for Open Container Initiative Distribution Specification
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Open Container Initiative Distribution Specification Blobs Tags API
+  version: v1.1.1
+tags:
+- name: Tags
+paths:
+  /v2/{name}/tags/list:
+    get:
+      consumes:
+      - application/json
+      description: List all image tags in a repository
+      parameters:
+      - description: repository name
+        in: path
+        name: name
+        required: true
+        type: string
+      - description: limit entries for pagination
+        in: query
+        name: n
+        required: true
+        type: integer
+      - description: last tag value for pagination
+        in: query
+        name: last
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/common.ImageTags'
+        '400':
+          description: bad request
+          schema:
+            type: string
+        '404':
+          description: not found
+          schema:
+            type: string
+      summary: List image tags
+      tags:
+      - Tags
+definitions:
+  common.ImageTags:
+    properties:
+      name:
+        type: string
+      tags:
+        items:
+          type: string
+        type: array
+    type: object

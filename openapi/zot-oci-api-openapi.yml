@@ -1,0 +1,48 @@
+swagger: '2.0'
+info:
+  contact: {}
+  description: APIs for Open Container Initiative Distribution Specification
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Open Container Initiative Distribution Specification Blobs Oci API
+  version: v1.1.1
+tags:
+- name: Oci
+paths:
+  /v2/_oci/ext/discover:
+    get:
+      consumes:
+      - application/json
+      description: List all extensions present on registry
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/api.ExtensionList'
+      summary: List Registry level extensions
+      tags:
+      - Oci
+definitions:
+  extensions.Extension:
+    properties:
+      description:
+        type: string
+      endpoints:
+        items:
+          type: string
+        type: array
+      name:
+        type: string
+      url:
+        type: string
+    type: object
+  api.ExtensionList:
+    properties:
+      extensions:
+        items:
+          $ref: '#/definitions/extensions.Extension'
+        type: array
+    type: object

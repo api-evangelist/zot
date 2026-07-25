@@ -1,0 +1,291 @@
+swagger: '2.0'
+info:
+  contact: {}
+  description: APIs for Open Container Initiative Distribution Specification
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Open Container Initiative Distribution Specification Blobs Manifests API
+  version: v1.1.1
+tags:
+- name: Manifests
+paths:
+  /v2/{name}/manifests/{reference}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete an image's manifest given a reference or a digest
+      parameters:
+      - description: repository name
+        in: path
+        name: name
+        required: true
+        type: string
+      - description: image reference or digest
+        in: path
+        name: reference
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        '202':
+          description: accepted
+        '400':
+          description: bad request
+          schema:
+            type: string
+        '404':
+          description: not found
+          schema:
+            type: string
+        '405':
+          description: method not allowed
+          schema:
+            type: string
+        '409':
+          description: conflict
+          schema:
+            type: string
+        '500':
+          description: internal server error
+          schema:
+            type: string
+      summary: Delete image manifest
+      tags:
+      - Manifests
+    get:
+      consumes:
+      - application/json
+      description: Get an image's manifest given a reference or a digest
+      parameters:
+      - description: repository name
+        in: path
+        name: name
+        required: true
+        type: string
+      - description: image reference or digest
+        in: path
+        name: reference
+        required: true
+        type: string
+      produces:
+      - application/vnd.oci.image.manifest.v1+json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Docker-Content-Digest:
+              description: Manifest digest of the content
+              type: string
+          schema:
+            $ref: '#/definitions/api.ImageManifest'
+        '404':
+          description: not found
+          schema:
+            type: string
+        '500':
+          description: internal server error
+          schema:
+            type: string
+      summary: Get image manifest
+      tags:
+      - Manifests
+    head:
+      consumes:
+      - application/json
+      description: Check an image's manifest given a reference or a digest
+      parameters:
+      - description: repository name
+        in: path
+        name: name
+        required: true
+        type: string
+      - description: image reference or digest
+        in: path
+        name: reference
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: ok
+          headers:
+            Docker-Content-Digest:
+              description: Manifest digest of the content
+              type: string
+          schema:
+            type: string
+        '404':
+          description: not found
+          schema:
+            type: string
+        '500':
+          description: internal server error
+          schema:
+            type: string
+      summary: Check image manifest
+      tags:
+      - Manifests
+    put:
+      consumes:
+      - application/json
+      description: 'Update an image''s manifest given a reference or a digest. On digest pushes with `tag=` query
+
+        parameters, 201 responses repeat the `OCI-Tag` header once per tag value.'
+      parameters:
+      - description: repository name
+        in: path
+        name: name
+        required: true
+        type: string
+      - description: image reference or digest
+        in: path
+        name: reference
+        required: true
+        type: string
+      - collectionFormat: multi
+        description: additional tag(s) for digest pushes
+        in: query
+        items:
+          type: string
+        name: tag
+        type: array
+      produces:
+      - application/json
+      responses:
+        '201':
+          description: created
+          headers:
+            Docker-Content-Digest:
+              description: Manifest digest of the uploaded content
+              type: string
+            OCI-Tag:
+              description: Echoed tag= value; this header is repeatable (one field per tag= query parameter)
+              type: string
+        '400':
+          description: bad request
+          schema:
+            type: string
+        '404':
+          description: not found
+          schema:
+            type: string
+        '413':
+          description: request entity too large
+          schema:
+            type: string
+        '414':
+          description: too many tag query parameters
+          schema:
+            type: string
+        '500':
+          description: internal server error
+          schema:
+            type: string
+      summary: Update image manifest
+      tags:
+      - Manifests
+definitions:
+  api.ImageManifest:
+    properties:
+      annotations:
+        additionalProperties:
+          type: string
+        description: Annotations contains arbitrary metadata for the image manifest.
+        type: object
+      artifactType:
+        description: ArtifactType specifies the IANA media type of artifact when the manifest is used for an artifact.
+        type: string
+      config:
+        allOf:
+        - $ref: '#/definitions/v1.Descriptor'
+        description: 'Config references a configuration object for a container, by digest.
+
+          The referenced configuration object is a JSON blob that the runtime uses to set up the container.'
+      layers:
+        description: Layers is an indexed list of layers referenced by the manifest.
+        items:
+          $ref: '#/definitions/v1.Descriptor'
+        type: array
+      mediaType:
+        description: MediaType specifies the type of this document data structure e.g. `application/vnd.oci.image.manifest.v1+json`
+        type: string
+      schemaVersion:
+        description: SchemaVersion is the image manifest schema that this image follows
+        type: integer
+      subject:
+        allOf:
+        - $ref: '#/definitions/v1.Descriptor'
+        description: Subject is an optional link from the image manifest to another manifest forming an association between the image manifest and the other manifest.
+    type: object
+  v1.Descriptor:
+    properties:
+      annotations:
+        additionalProperties:
+          type: string
+        description: Annotations contains arbitrary metadata relating to the targeted content.
+        type: object
+      artifactType:
+        description: ArtifactType is the IANA media type of this artifact.
+        type: string
+      data:
+        description: 'Data is an embedding of the targeted content. This is encoded as a base64
+
+          string when marshalled to JSON (automatically, by encoding/json). If
+
+          present, Data can be used directly to avoid fetching the targeted content.'
+        items:
+          type: integer
+        type: array
+      digest:
+        description: Digest is the digest of the targeted content.
+        type: string
+      mediaType:
+        description: MediaType is the media type of the object this schema refers to.
+        type: string
+      platform:
+        allOf:
+        - $ref: '#/definitions/v1.Platform'
+        description: 'Platform describes the platform which the image in the manifest runs on.
+
+
+          This should only be used when referring to a manifest.'
+      size:
+        description: Size specifies the size in bytes of the blob.
+        type: integer
+      urls:
+        description: URLs specifies a list of URLs from which this object MAY be downloaded
+        items:
+          type: string
+        type: array
+    type: object
+  v1.Platform:
+    properties:
+      architecture:
+        description: 'Architecture field specifies the CPU architecture, for example
+
+          `amd64` or `ppc64le`.'
+        type: string
+      os:
+        description: OS specifies the operating system, for example `linux` or `windows`.
+        type: string
+      os.features:
+        description: 'OSFeatures is an optional field specifying an array of strings,
+
+          each listing a required OS feature (for example on Windows `win32k`).'
+        items:
+          type: string
+        type: array
+      os.version:
+        description: 'OSVersion is an optional field specifying the operating system
+
+          version, for example on Windows `10.0.14393.1066`.'
+        type: string
+      variant:
+        description: 'Variant is an optional field specifying a variant of the CPU, for
+
+          example `v7` to specify ARMv7 when architecture is `arm`.'
+        type: string
+    type: object
