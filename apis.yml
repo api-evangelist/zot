@@ -1,4 +1,17 @@
 aid: zot
+accessModel:
+  pricing: free
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Free
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/zot.png
 name: Zot
 description: A decentralized communication protocol and platform for federated social networking, enabling secure and private
   content sharing across distributed servers.
@@ -17,7 +30,73 @@ common:
     url: agentic-access/zot-agentic-access.yml
   - type: GitHubOrganization
     url: https://github.com/project-zot
-apis: []
+apis:
+- aid: zot:zot-blobs-api
+  name: Zot Blobs API
+  description: The Blobs API from Zot — 3 operation(s) for blobs.
+  tags:
+  - Blobs
+  properties:
+  - type: OpenAPI
+    url: openapi/zot-blobs-api-openapi.yml
+- aid: zot:zot-catalog-api
+  name: Zot Catalog API
+  description: The Catalog API from Zot — 1 operation(s) for catalog.
+  tags:
+  - Catalog
+  properties:
+  - type: OpenAPI
+    url: openapi/zot-catalog-api-openapi.yml
+- aid: zot:zot-manifests-api
+  name: Zot Manifests API
+  description: The Manifests API from Zot — 1 operation(s) for manifests.
+  tags:
+  - Manifests
+  properties:
+  - type: OpenAPI
+    url: openapi/zot-manifests-api-openapi.yml
+- aid: zot:zot-oci-api
+  name: Zot Oci API
+  description: The Oci API from Zot — 1 operation(s) for oci.
+  tags:
+  - Oci
+  properties:
+  - type: OpenAPI
+    url: openapi/zot-oci-api-openapi.yml
+- aid: zot:zot-open-container-initiative-distribution-specification-api
+  name: Zot Open Container Initiative Distribution Specification API
+  description: >-
+    The Open Container Initiative Distribution Specification API from Zot — 1 operation(s) for open container
+    initiative distribution specification.
+  tags:
+  - Open Container Initiative Distribution Specification
+  properties:
+  - type: OpenAPI
+    url: openapi/zot-open-container-initiative-distribution-specification-api-openapi.yml
+- aid: zot:zot-referrers-api
+  name: Zot Referrers API
+  description: The Referrers API from Zot — 1 operation(s) for referrers.
+  tags:
+  - Referrers
+  properties:
+  - type: OpenAPI
+    url: openapi/zot-referrers-api-openapi.yml
+- aid: zot:zot-tags-api
+  name: Zot Tags API
+  description: The Tags API from Zot — 1 operation(s) for tags.
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/zot-tags-api-openapi.yml
+- aid: zot:zot-zot-api
+  name: Zot Zot API
+  description: The Zot API from Zot — 6 operation(s) for zot.
+  tags:
+  - Zot
+  properties:
+  - type: OpenAPI
+    url: openapi/zot-zot-api-openapi.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
