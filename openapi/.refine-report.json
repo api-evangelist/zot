@@ -1,0 +1,28 @@
+{
+  "provider": "zot",
+  "sources": [
+    "zot-blobs-api-openapi.yml",
+    "zot-catalog-api-openapi.yml",
+    "zot-manifests-api-openapi.yml",
+    "zot-oci-api-openapi.yml",
+    "zot-open-container-initiative-distribution-specification-api-openapi.yml",
+    "zot-referrers-api-openapi.yml",
+    "zot-tags-api-openapi.yml",
+    "zot-zot-api-openapi.yml"
+  ],
+  "outputs": [
+    "zot-blobs-api-openapi.yml",
+    "zot-catalog-api-openapi.yml",
+    "zot-manifests-api-openapi.yml",
+    "zot-oci-api-openapi.yml",
+    "zot-open-container-initiative-distribution-specification-api-openapi.yml",
+    "zot-referrers-api-openapi.yml",
+    "zot-tags-api-openapi.yml",
+    "zot-zot-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
