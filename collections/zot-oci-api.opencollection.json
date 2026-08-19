@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Open Container Initiative Distribution Specification Blobs Oci API",
+    "version": "v1.1.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Oci",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Registry level extensions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/_oci/ext/discover"
+          },
+          "docs": "List all extensions present on registry"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

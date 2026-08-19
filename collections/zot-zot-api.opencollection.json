@@ -1,0 +1,144 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Open Container Initiative Distribution Specification Blobs Zot API",
+    "version": "v1.1.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Zot",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload cosign public keys for verifying signatures",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v2/_zot/ext/cosign"
+          },
+          "docs": "Upload cosign public keys for verifying signatures"
+        },
+        {
+          "info": {
+            "name": "Get current server configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/_zot/ext/mgmt",
+            "params": [
+              {
+                "name": "resource",
+                "value": "",
+                "type": "query",
+                "description": "specify resource"
+              }
+            ]
+          },
+          "docs": "Get current server configuration"
+        },
+        {
+          "info": {
+            "name": "Upload notation certificates for verifying signatures",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v2/_zot/ext/notation",
+            "params": [
+              {
+                "name": "truststoreType",
+                "value": "",
+                "type": "query",
+                "description": "truststore type"
+              }
+            ]
+          },
+          "docs": "Upload notation certificates for verifying signatures"
+        },
+        {
+          "info": {
+            "name": "Add bookmarks/stars info",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/v2/_zot/ext/userprefs",
+            "params": [
+              {
+                "name": "action",
+                "value": "",
+                "type": "query",
+                "description": "specify action"
+              },
+              {
+                "name": "repo",
+                "value": "",
+                "type": "query",
+                "description": "repository name"
+              }
+            ]
+          },
+          "docs": "Add bookmarks/stars info"
+        },
+        {
+          "info": {
+            "name": "Get list of API keys for the current user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/zot/auth/apikey"
+          },
+          "docs": "Get list of all API keys for a logged in user"
+        },
+        {
+          "info": {
+            "name": "Create an API key for the current user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/zot/auth/apikey"
+          },
+          "docs": "Can create an api key for a logged in user, based on the provided label and scopes."
+        },
+        {
+          "info": {
+            "name": "Revokes one current user API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/zot/auth/apikey",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "api token id (UUID)"
+              }
+            ]
+          },
+          "docs": "Revokes one current user API key based on given key ID"
+        },
+        {
+          "info": {
+            "name": "Logout by removing current session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/zot/auth/logout"
+          },
+          "docs": "Logout by removing current session. For OIDC providers that advertise an\n`end_session_endpoint` in their discovery metadata (OpenID Connect\nRP-Initiated Logout 1.0), the response body contains an `endSessionUrl`\nthe client should navigate to in order to terminate the session at the IdP."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

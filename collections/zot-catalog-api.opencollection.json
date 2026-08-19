@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Open Container Initiative Distribution Specification Blobs Catalog API",
+    "version": "v1.1.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Catalog",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List image repositories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/_catalog"
+          },
+          "docs": "List all image repositories"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

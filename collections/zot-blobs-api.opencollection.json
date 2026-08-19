@@ -1,0 +1,218 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Open Container Initiative Distribution Specification Blobs API",
+    "version": "v1.1.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Blobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get image blob/layer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/:name/blobs/:digest",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "repository name"
+              },
+              {
+                "name": "digest",
+                "value": "",
+                "type": "path",
+                "description": "blob/layer digest"
+              }
+            ]
+          },
+          "docs": "Get an image's blob/layer given a digest"
+        },
+        {
+          "info": {
+            "name": "Delete image blob/layer",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/v2/:name/blobs/:digest",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "repository name"
+              },
+              {
+                "name": "digest",
+                "value": "",
+                "type": "path",
+                "description": "blob/layer digest"
+              }
+            ]
+          },
+          "docs": "Delete an image's blob/layer given a digest"
+        },
+        {
+          "info": {
+            "name": "Check image blob/layer",
+            "type": "http"
+          },
+          "http": {
+            "method": "HEAD",
+            "url": "{{baseUrl}}/v2/:name/blobs/:digest",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "repository name"
+              },
+              {
+                "name": "digest",
+                "value": "",
+                "type": "path",
+                "description": "blob/layer digest"
+              }
+            ]
+          },
+          "docs": "Check an image's blob/layer given a digest"
+        },
+        {
+          "info": {
+            "name": "Create image blob/layer upload",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v2/:name/blobs/uploads",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "repository name"
+              }
+            ]
+          },
+          "docs": "Create a new image blob/layer upload"
+        },
+        {
+          "info": {
+            "name": "Get image blob/layer upload",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/:name/blobs/uploads/:session_id",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "repository name"
+              },
+              {
+                "name": "session_id",
+                "value": "",
+                "type": "path",
+                "description": "upload session_id"
+              }
+            ]
+          },
+          "docs": "Get an image's blob/layer upload given a session_id"
+        },
+        {
+          "info": {
+            "name": "Update image blob/layer upload",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/v2/:name/blobs/uploads/:session_id",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "repository name"
+              },
+              {
+                "name": "session_id",
+                "value": "",
+                "type": "path",
+                "description": "upload session_id"
+              },
+              {
+                "name": "digest",
+                "value": "",
+                "type": "query",
+                "description": "blob/layer digest"
+              }
+            ]
+          },
+          "docs": "Update and finish an image's blob/layer upload given a digest"
+        },
+        {
+          "info": {
+            "name": "Resume image blob/layer upload",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/v2/:name/blobs/uploads/:session_id",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "repository name"
+              },
+              {
+                "name": "session_id",
+                "value": "",
+                "type": "path",
+                "description": "upload session_id"
+              }
+            ]
+          },
+          "docs": "Resume an image's blob/layer upload given an session_id"
+        },
+        {
+          "info": {
+            "name": "Delete image blob/layer",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/v2/:name/blobs/uploads/:session_id",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "repository name"
+              },
+              {
+                "name": "session_id",
+                "value": "",
+                "type": "path",
+                "description": "upload session_id"
+              }
+            ]
+          },
+          "docs": "Delete an image's blob/layer given a digest"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

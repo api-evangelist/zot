@@ -1,0 +1,266 @@
+{
+  "item": [
+    {
+      "id": "8d9b10b8-36d1-4ad6-8b7b-b4d0b28c2a83",
+      "name": "Referrers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ee8713aa-22c5-41a2-be03-c156c8283b7f",
+          "name": "Get referrers for a given digest",
+          "request": {
+            "name": "Get referrers for a given digest",
+            "description": {
+              "content": "Get referrers given a digest",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                ":name",
+                "referrers",
+                ":digest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "artifactType",
+                  "value": "<string>",
+                  "description": "artifact type"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) repository name"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "digest",
+                  "description": "(Required) digest"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.oci.image.index.v1+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "912dd806-3895-4ac9-8390-c3c746625fc2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    ":name",
+                    "referrers",
+                    ":digest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "artifactType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) repository name"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "digest",
+                      "description": "(Required) digest"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.oci.image.index.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.oci.image.index.v1+json"
+                }
+              ],
+              "body": "{\n  \"annotations\": {\n    \"key_0\": \"string\"\n  },\n  \"artifactType\": \"string\",\n  \"manifests\": [\n    {\n      \"annotations\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"artifactType\": \"string\",\n      \"data\": [\n        9226,\n        8967\n      ],\n      \"digest\": \"string\",\n      \"mediaType\": \"string\",\n      \"platform\": {\n        \"architecture\": \"string\",\n        \"os\": \"string\",\n        \"os.features\": [\n          \"string\",\n          \"string\"\n        ],\n        \"os.version\": \"string\",\n        \"variant\": \"string\"\n      },\n      \"size\": 5121,\n      \"urls\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"annotations\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"artifactType\": \"string\",\n      \"data\": [\n        1896,\n        6052\n      ],\n      \"digest\": \"string\",\n      \"mediaType\": \"string\",\n      \"platform\": {\n        \"architecture\": \"string\",\n        \"os\": \"string\",\n        \"os.features\": [\n          \"string\",\n          \"string\"\n        ],\n        \"os.version\": \"string\",\n        \"variant\": \"string\"\n      },\n      \"size\": 2314,\n      \"urls\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"mediaType\": \"string\",\n  \"schemaVersion\": 6300,\n  \"subject\": {\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"artifactType\": \"string\",\n    \"data\": [\n      6061,\n      1738\n    ],\n    \"digest\": \"string\",\n    \"mediaType\": \"string\",\n    \"platform\": {\n      \"architecture\": \"string\",\n      \"os\": \"string\",\n      \"os.features\": [\n        \"string\",\n        \"string\"\n      ],\n      \"os.version\": \"string\",\n      \"variant\": \"string\"\n    },\n    \"size\": 9047,\n    \"urls\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e5c7e15a-37ee-4c73-b744-144085b2ef2c",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    ":name",
+                    "referrers",
+                    ":digest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "artifactType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) repository name"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "digest",
+                      "description": "(Required) digest"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.oci.image.index.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.oci.image.index.v1+json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "32b0b32d-d441-41f4-8b43-a56cb1f8c38e",
+              "name": "internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    ":name",
+                    "referrers",
+                    ":digest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "artifactType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) repository name"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "digest",
+                      "description": "(Required) digest"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.oci.image.index.v1+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.oci.image.index.v1+json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d36e218a-55bc-435c-a00b-7fbf4d154fd3",
+    "name": "Open Container Initiative Distribution Specification Blobs Referrers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "APIs for Open Container Initiative Distribution Specification",
+      "type": "text/plain"
+    }
+  }
+}

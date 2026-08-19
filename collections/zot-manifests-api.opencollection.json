@@ -1,0 +1,124 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Open Container Initiative Distribution Specification Blobs Manifests API",
+    "version": "v1.1.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Manifests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get image manifest",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/:name/manifests/:reference",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "repository name"
+              },
+              {
+                "name": "reference",
+                "value": "",
+                "type": "path",
+                "description": "image reference or digest"
+              }
+            ]
+          },
+          "docs": "Get an image's manifest given a reference or a digest"
+        },
+        {
+          "info": {
+            "name": "Update image manifest",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/v2/:name/manifests/:reference",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "repository name"
+              },
+              {
+                "name": "reference",
+                "value": "",
+                "type": "path",
+                "description": "image reference or digest"
+              },
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query",
+                "description": "additional tag(s) for digest pushes"
+              }
+            ]
+          },
+          "docs": "Update an image's manifest given a reference or a digest. On digest pushes with `tag=` query\nparameters, 201 responses repeat the `OCI-Tag` header once per tag value."
+        },
+        {
+          "info": {
+            "name": "Delete image manifest",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/v2/:name/manifests/:reference",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "repository name"
+              },
+              {
+                "name": "reference",
+                "value": "",
+                "type": "path",
+                "description": "image reference or digest"
+              }
+            ]
+          },
+          "docs": "Delete an image's manifest given a reference or a digest"
+        },
+        {
+          "info": {
+            "name": "Check image manifest",
+            "type": "http"
+          },
+          "http": {
+            "method": "HEAD",
+            "url": "{{baseUrl}}/v2/:name/manifests/:reference",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "repository name"
+              },
+              {
+                "name": "reference",
+                "value": "",
+                "type": "path",
+                "description": "image reference or digest"
+              }
+            ]
+          },
+          "docs": "Check an image's manifest given a reference or a digest"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Open Container Initiative Distribution Specification Blobs Tags API",
+    "version": "v1.1.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List image tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/:name/tags/list",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "repository name"
+              },
+              {
+                "name": "n",
+                "value": "",
+                "type": "query",
+                "description": "limit entries for pagination"
+              },
+              {
+                "name": "last",
+                "value": "",
+                "type": "query",
+                "description": "last tag value for pagination"
+              }
+            ]
+          },
+          "docs": "List all image tags in a repository"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

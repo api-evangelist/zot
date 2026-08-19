@@ -1,0 +1,104 @@
+{
+  "item": [
+    {
+      "id": "05bec287-5c88-4aa1-bb3a-5b8572dbbbbc",
+      "name": "Open Container Initiative Distribution Specification",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3be5dfa4-1871-46a0-afb1-473051875ae3",
+          "name": "Check API support",
+          "request": {
+            "name": "Check API support",
+            "description": {
+              "content": "Check if this API version is supported",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b721ddfc-adc1-4e5e-acbb-aef4c2a24a7c",
+              "name": "ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "474ca31a-f2f7-477d-8118-a8128be8f464",
+    "name": "Blobs Open Container Initiative Distribution Specification API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "APIs for Open Container Initiative Distribution Specification",
+      "type": "text/plain"
+    }
+  }
+}

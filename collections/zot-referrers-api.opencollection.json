@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Open Container Initiative Distribution Specification Blobs Referrers API",
+    "version": "v1.1.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Referrers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get referrers for a given digest",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/:name/referrers/:digest",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "repository name"
+              },
+              {
+                "name": "digest",
+                "value": "",
+                "type": "path",
+                "description": "digest"
+              },
+              {
+                "name": "artifactType",
+                "value": "",
+                "type": "query",
+                "description": "artifact type"
+              }
+            ]
+          },
+          "docs": "Get referrers given a digest"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
