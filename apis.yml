@@ -70,7 +70,7 @@ apis:
   name: Zot Oci API
   description: The Oci API from Zot — 1 operation(s) for oci.
   tags:
-  - Oci
+  - OCI
   tags_raw:
   - Oci
   properties:
