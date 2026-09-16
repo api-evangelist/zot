@@ -24,8 +24,8 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/zot.png
 name: Zot
-description: A decentralized communication protocol and platform for federated social networking, enabling secure and private
-  content sharing across distributed servers.
+description: A decentralized communication protocol and platform for federated social networking, enabling
+  secure and private content sharing across distributed servers.
 type: Index
 url: https://zotlabs.org
 tags:
@@ -34,13 +34,13 @@ tags:
 - Privacy
 - Social Networking
 created: '2025'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 common:
-  - type: AgenticAccess
-    url: agentic-access/zot-agentic-access.yml
-  - type: GitHubOrganization
-    url: https://github.com/project-zot
+- type: AgenticAccess
+  url: agentic-access/zot-agentic-access.yml
+- type: GitHubOrganization
+  url: https://github.com/project-zot
 apis:
 - aid: zot:zot-blobs-api
   name: Zot Blobs API
@@ -78,9 +78,8 @@ apis:
     url: openapi/zot-oci-api-openapi.yml
 - aid: zot:zot-open-container-initiative-distribution-specification-api
   name: Zot Open Container Initiative Distribution Specification API
-  description: >-
-    The Open Container Initiative Distribution Specification API from Zot — 1 operation(s) for open container
-    initiative distribution specification.
+  description: The Open Container Initiative Distribution Specification API from Zot — 1 operation(s)
+    for open container initiative distribution specification.
   tags:
   - Open Container Initiative Distribution Specification
   properties:
@@ -103,7 +102,7 @@ apis:
   - type: OpenAPI
     url: openapi/zot-tags-api-openapi.yml
 - aid: zot:zot-zot-api
-  name: Zot Zot API
+  name: Zot API
   description: The Zot API from Zot — 6 operation(s) for zot.
   tags:
   - Zot
