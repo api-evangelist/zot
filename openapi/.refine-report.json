@@ -1,14 +1,7 @@
 {
   "provider": "zot",
   "sources": [
-    "zot-blobs-api-openapi.yml",
-    "zot-catalog-api-openapi.yml",
-    "zot-manifests-api-openapi.yml",
-    "zot-oci-api-openapi.yml",
-    "zot-open-container-initiative-distribution-specification-api-openapi.yml",
-    "zot-referrers-api-openapi.yml",
-    "zot-tags-api-openapi.yml",
-    "zot-zot-api-openapi.yml"
+    "_original/zot-openapi.yml"
   ],
   "outputs": [
     "zot-blobs-api-openapi.yml",
@@ -23,6 +16,52 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "zot-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "zot-openapi.yml: tagged paths GET /v2/ -> Open Container Initiative Distribution Specification",
+    "zot-openapi.yml: tagged paths GET /v2/_catalog -> Catalog",
+    "zot-openapi.yml: tagged paths GET /v2/_oci/ext/discover -> Oci",
+    "zot-openapi.yml: tagged paths POST /v2/_zot/ext/cosign -> Zot",
+    "zot-openapi.yml: tagged paths GET /v2/_zot/ext/mgmt -> Zot",
+    "zot-openapi.yml: tagged paths POST /v2/_zot/ext/notation -> Zot",
+    "zot-openapi.yml: tagged paths PUT /v2/_zot/ext/userprefs -> Zot",
+    "zot-openapi.yml: tagged paths DELETE /v2/{name}/blobs/{digest} -> Blobs",
+    "zot-openapi.yml: tagged paths GET /v2/{name}/blobs/{digest} -> Blobs",
+    "zot-openapi.yml: tagged paths HEAD /v2/{name}/blobs/{digest} -> Blobs",
+    "zot-openapi.yml: tagged paths POST /v2/{name}/blobs/uploads -> Blobs",
+    "zot-openapi.yml: tagged paths DELETE /v2/{name}/blobs/uploads/{session_id} -> Blobs",
+    "zot-openapi.yml: tagged paths GET /v2/{name}/blobs/uploads/{session_id} -> Blobs",
+    "zot-openapi.yml: tagged paths PATCH /v2/{name}/blobs/uploads/{session_id} -> Blobs",
+    "zot-openapi.yml: tagged paths PUT /v2/{name}/blobs/uploads/{session_id} -> Blobs",
+    "zot-openapi.yml: tagged paths DELETE /v2/{name}/manifests/{reference} -> Manifests",
+    "zot-openapi.yml: tagged paths GET /v2/{name}/manifests/{reference} -> Manifests",
+    "zot-openapi.yml: tagged paths HEAD /v2/{name}/manifests/{reference} -> Manifests",
+    "zot-openapi.yml: tagged paths PUT /v2/{name}/manifests/{reference} -> Manifests",
+    "zot-openapi.yml: tagged paths GET /v2/{name}/referrers/{digest} -> Referrers",
+    "zot-openapi.yml: tagged paths GET /v2/{name}/tags/list -> Tags",
+    "zot-openapi.yml: tagged paths DELETE /zot/auth/apikey -> Zot",
+    "zot-openapi.yml: tagged paths GET /zot/auth/apikey -> Zot",
+    "zot-openapi.yml: tagged paths POST /zot/auth/apikey -> Zot",
+    "zot-openapi.yml: tagged paths POST /zot/auth/logout -> Zot",
+    "zot-openapi.yml: declared missing tag: Blobs",
+    "zot-openapi.yml: declared missing tag: Catalog",
+    "zot-openapi.yml: declared missing tag: Manifests",
+    "zot-openapi.yml: declared missing tag: Oci",
+    "zot-openapi.yml: declared missing tag: Open Container Initiative Distribution Specification",
+    "zot-openapi.yml: declared missing tag: Referrers",
+    "zot-openapi.yml: declared missing tag: Tags",
+    "zot-openapi.yml: declared missing tag: Zot",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "zot-blobs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zot-catalog-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zot-manifests-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zot-oci-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zot-open-container-initiative-distribution-specification-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zot-referrers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zot-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zot-zot-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
