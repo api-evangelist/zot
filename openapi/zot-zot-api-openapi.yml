@@ -316,23 +316,9 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    extensions.OpenIDConfig:
-      properties:
-        providers:
-          additionalProperties:
-            $ref: '#/components/schemas/extensions.OpenIDProviderConfig'
-          type: object
-      type: object
     extensions.HTPasswd:
       properties:
         path:
-          type: string
-      type: object
-    extensions.BearerConfig:
-      properties:
-        realm:
-          type: string
-        service:
           type: string
       type: object
     extensions.OpenIDProviderConfig:
@@ -344,6 +330,17 @@ components:
       properties:
         endSessionUrl:
           type: string
+      type: object
+    api.APIKeyPayload:
+      properties:
+        expirationDate:
+          type: string
+        label:
+          type: string
+        scopes:
+          items:
+            type: string
+          type: array
       type: object
     extensions.Auth:
       properties:
@@ -361,16 +358,19 @@ components:
         openid:
           $ref: '#/components/schemas/extensions.OpenIDConfig'
       type: object
-    api.APIKeyPayload:
+    extensions.OpenIDConfig:
       properties:
-        expirationDate:
+        providers:
+          additionalProperties:
+            $ref: '#/components/schemas/extensions.OpenIDProviderConfig'
+          type: object
+      type: object
+    extensions.BearerConfig:
+      properties:
+        realm:
           type: string
-        label:
+        service:
           type: string
-        scopes:
-          items:
-            type: string
-          type: array
       type: object
     extensions.StrippedConfig:
       properties:
