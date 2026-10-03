@@ -27,6 +27,13 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    api.ExtensionList:
+      properties:
+        extensions:
+          items:
+            $ref: '#/components/schemas/extensions.Extension'
+          type: array
+      type: object
     extensions.Extension:
       properties:
         description:
@@ -39,11 +46,4 @@ components:
           type: string
         url:
           type: string
-      type: object
-    api.ExtensionList:
-      properties:
-        extensions:
-          items:
-            $ref: '#/components/schemas/extensions.Extension'
-          type: array
       type: object

@@ -316,20 +316,28 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    extensions.HTPasswd:
+    extensions.StrippedConfig:
       properties:
-        path:
+        binaryType:
+          type: string
+        commit:
+          type: string
+        distSpecVersion:
+          type: string
+        http:
+          properties:
+            auth:
+              $ref: '#/components/schemas/extensions.Auth'
+          type: object
+        releaseTag:
           type: string
       type: object
-    extensions.OpenIDProviderConfig:
+    extensions.OpenIDConfig:
       properties:
-        name:
-          type: string
-      type: object
-    api.LogoutResponse:
-      properties:
-        endSessionUrl:
-          type: string
+        providers:
+          additionalProperties:
+            $ref: '#/components/schemas/extensions.OpenIDProviderConfig'
+          type: object
       type: object
     api.APIKeyPayload:
       properties:
@@ -358,13 +366,6 @@ components:
         openid:
           $ref: '#/components/schemas/extensions.OpenIDConfig'
       type: object
-    extensions.OpenIDConfig:
-      properties:
-        providers:
-          additionalProperties:
-            $ref: '#/components/schemas/extensions.OpenIDProviderConfig'
-          type: object
-      type: object
     extensions.BearerConfig:
       properties:
         realm:
@@ -372,19 +373,18 @@ components:
         service:
           type: string
       type: object
-    extensions.StrippedConfig:
+    api.LogoutResponse:
       properties:
-        binaryType:
+        endSessionUrl:
           type: string
-        commit:
+      type: object
+    extensions.HTPasswd:
+      properties:
+        path:
           type: string
-        distSpecVersion:
-          type: string
-        http:
-          properties:
-            auth:
-              $ref: '#/components/schemas/extensions.Auth'
-          type: object
-        releaseTag:
+      type: object
+    extensions.OpenIDProviderConfig:
+      properties:
+        name:
           type: string
       type: object

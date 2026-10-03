@@ -348,6 +348,66 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    v1.Platform:
+      properties:
+        architecture:
+          description: 'Architecture field specifies the CPU architecture, for example
+
+            `amd64` or `ppc64le`.'
+          type: string
+        os:
+          description: OS specifies the operating system, for example `linux` or `windows`.
+          type: string
+        os.features:
+          description: 'OSFeatures is an optional field specifying an array of strings,
+
+            each listing a required OS feature (for example on Windows `win32k`).'
+          items:
+            type: string
+          type: array
+        os.version:
+          description: 'OSVersion is an optional field specifying the operating system
+
+            version, for example on Windows `10.0.14393.1066`.'
+          type: string
+        variant:
+          description: 'Variant is an optional field specifying a variant of the CPU, for
+
+            example `v7` to specify ARMv7 when architecture is `arm`.'
+          type: string
+      type: object
+    api.ImageManifest:
+      properties:
+        annotations:
+          additionalProperties:
+            type: string
+          description: Annotations contains arbitrary metadata for the image manifest.
+          type: object
+        artifactType:
+          description: ArtifactType specifies the IANA media type of artifact when the manifest is used for an artifact.
+          type: string
+        config:
+          allOf:
+          - $ref: '#/components/schemas/v1.Descriptor'
+          description: 'Config references a configuration object for a container, by digest.
+
+            The referenced configuration object is a JSON blob that the runtime uses to set up the container.'
+        layers:
+          description: Layers is an indexed list of layers referenced by the manifest.
+          items:
+            $ref: '#/components/schemas/v1.Descriptor'
+          type: array
+        mediaType:
+          description: MediaType specifies the type of this document data structure e.g. `application/vnd.oci.image.manifest.v1+json`
+          type: string
+        schemaVersion:
+          description: SchemaVersion is the image manifest schema that this image follows
+          type: integer
+        subject:
+          allOf:
+          - $ref: '#/components/schemas/v1.Descriptor'
+          description: Subject is an optional link from the image manifest to another manifest forming an association between the image manifest and the other manifest.
+      type: object
     v1.Descriptor:
       properties:
         annotations:
@@ -388,64 +448,4 @@ components:
           items:
             type: string
           type: array
-      type: object
-    api.ImageManifest:
-      properties:
-        annotations:
-          additionalProperties:
-            type: string
-          description: Annotations contains arbitrary metadata for the image manifest.
-          type: object
-        artifactType:
-          description: ArtifactType specifies the IANA media type of artifact when the manifest is used for an artifact.
-          type: string
-        config:
-          allOf:
-          - $ref: '#/components/schemas/v1.Descriptor'
-          description: 'Config references a configuration object for a container, by digest.
-
-            The referenced configuration object is a JSON blob that the runtime uses to set up the container.'
-        layers:
-          description: Layers is an indexed list of layers referenced by the manifest.
-          items:
-            $ref: '#/components/schemas/v1.Descriptor'
-          type: array
-        mediaType:
-          description: MediaType specifies the type of this document data structure e.g. `application/vnd.oci.image.manifest.v1+json`
-          type: string
-        schemaVersion:
-          description: SchemaVersion is the image manifest schema that this image follows
-          type: integer
-        subject:
-          allOf:
-          - $ref: '#/components/schemas/v1.Descriptor'
-          description: Subject is an optional link from the image manifest to another manifest forming an association between the image manifest and the other manifest.
-      type: object
-    v1.Platform:
-      properties:
-        architecture:
-          description: 'Architecture field specifies the CPU architecture, for example
-
-            `amd64` or `ppc64le`.'
-          type: string
-        os:
-          description: OS specifies the operating system, for example `linux` or `windows`.
-          type: string
-        os.features:
-          description: 'OSFeatures is an optional field specifying an array of strings,
-
-            each listing a required OS feature (for example on Windows `win32k`).'
-          items:
-            type: string
-          type: array
-        os.version:
-          description: 'OSVersion is an optional field specifying the operating system
-
-            version, for example on Windows `10.0.14393.1066`.'
-          type: string
-        variant:
-          description: 'Variant is an optional field specifying a variant of the CPU, for
-
-            example `v7` to specify ARMv7 when architecture is `arm`.'
-          type: string
       type: object
