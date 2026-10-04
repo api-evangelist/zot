@@ -255,38 +255,6 @@ components:
             example `v7` to specify ARMv7 when architecture is `arm`.'
           type: string
       type: object
-    api.ImageManifest:
-      properties:
-        annotations:
-          additionalProperties:
-            type: string
-          description: Annotations contains arbitrary metadata for the image manifest.
-          type: object
-        artifactType:
-          description: ArtifactType specifies the IANA media type of artifact when the manifest is used for an artifact.
-          type: string
-        config:
-          allOf:
-          - $ref: '#/components/schemas/v1.Descriptor'
-          description: 'Config references a configuration object for a container, by digest.
-
-            The referenced configuration object is a JSON blob that the runtime uses to set up the container.'
-        layers:
-          description: Layers is an indexed list of layers referenced by the manifest.
-          items:
-            $ref: '#/components/schemas/v1.Descriptor'
-          type: array
-        mediaType:
-          description: MediaType specifies the type of this document data structure e.g. `application/vnd.oci.image.manifest.v1+json`
-          type: string
-        schemaVersion:
-          description: SchemaVersion is the image manifest schema that this image follows
-          type: integer
-        subject:
-          allOf:
-          - $ref: '#/components/schemas/v1.Descriptor'
-          description: Subject is an optional link from the image manifest to another manifest forming an association between the image manifest and the other manifest.
-      type: object
     v1.Descriptor:
       properties:
         annotations:
@@ -327,4 +295,36 @@ components:
           items:
             type: string
           type: array
+      type: object
+    api.ImageManifest:
+      properties:
+        annotations:
+          additionalProperties:
+            type: string
+          description: Annotations contains arbitrary metadata for the image manifest.
+          type: object
+        artifactType:
+          description: ArtifactType specifies the IANA media type of artifact when the manifest is used for an artifact.
+          type: string
+        config:
+          allOf:
+          - $ref: '#/components/schemas/v1.Descriptor'
+          description: 'Config references a configuration object for a container, by digest.
+
+            The referenced configuration object is a JSON blob that the runtime uses to set up the container.'
+        layers:
+          description: Layers is an indexed list of layers referenced by the manifest.
+          items:
+            $ref: '#/components/schemas/v1.Descriptor'
+          type: array
+        mediaType:
+          description: MediaType specifies the type of this document data structure e.g. `application/vnd.oci.image.manifest.v1+json`
+          type: string
+        schemaVersion:
+          description: SchemaVersion is the image manifest schema that this image follows
+          type: integer
+        subject:
+          allOf:
+          - $ref: '#/components/schemas/v1.Descriptor'
+          description: Subject is an optional link from the image manifest to another manifest forming an association between the image manifest and the other manifest.
       type: object
