@@ -316,6 +316,46 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    extensions.Auth:
+      properties:
+        apikey:
+          type: boolean
+        bearer:
+          $ref: '#/components/schemas/extensions.BearerConfig'
+        htpasswd:
+          $ref: '#/components/schemas/extensions.HTPasswd'
+        ldap:
+          properties:
+            address:
+              type: string
+          type: object
+        openid:
+          $ref: '#/components/schemas/extensions.OpenIDConfig'
+      type: object
+    api.LogoutResponse:
+      properties:
+        endSessionUrl:
+          type: string
+      type: object
+    extensions.OpenIDConfig:
+      properties:
+        providers:
+          additionalProperties:
+            $ref: '#/components/schemas/extensions.OpenIDProviderConfig'
+          type: object
+      type: object
+    extensions.BearerConfig:
+      properties:
+        realm:
+          type: string
+        service:
+          type: string
+      type: object
+    extensions.OpenIDProviderConfig:
+      properties:
+        name:
+          type: string
+      type: object
     extensions.StrippedConfig:
       properties:
         binaryType:
@@ -332,21 +372,6 @@ components:
         releaseTag:
           type: string
       type: object
-    api.LogoutResponse:
-      properties:
-        endSessionUrl:
-          type: string
-      type: object
-    extensions.OpenIDProviderConfig:
-      properties:
-        name:
-          type: string
-      type: object
-    extensions.HTPasswd:
-      properties:
-        path:
-          type: string
-      type: object
     api.APIKeyPayload:
       properties:
         expirationDate:
@@ -358,33 +383,8 @@ components:
             type: string
           type: array
       type: object
-    extensions.BearerConfig:
+    extensions.HTPasswd:
       properties:
-        realm:
+        path:
           type: string
-        service:
-          type: string
-      type: object
-    extensions.OpenIDConfig:
-      properties:
-        providers:
-          additionalProperties:
-            $ref: '#/components/schemas/extensions.OpenIDProviderConfig'
-          type: object
-      type: object
-    extensions.Auth:
-      properties:
-        apikey:
-          type: boolean
-        bearer:
-          $ref: '#/components/schemas/extensions.BearerConfig'
-        htpasswd:
-          $ref: '#/components/schemas/extensions.HTPasswd'
-        ldap:
-          properties:
-            address:
-              type: string
-          type: object
-        openid:
-          $ref: '#/components/schemas/extensions.OpenIDConfig'
       type: object
